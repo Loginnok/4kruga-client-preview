@@ -11,15 +11,17 @@
     "start": "node scripts/start-local.mjs",
     "build": "prisma generate && tsc -p tsconfig.json && node scripts/build.mjs",
     "typecheck": "prisma generate && tsc -p tsconfig.json --noEmit",
-    "lint": "eslint src scripts prisma tests public/app.js --max-warnings=0",
-    "test": "tsx --test --test-concurrency=1 tests/*.test.ts",
+    "lint": "eslint src scripts prisma tests public/*.js --max-warnings=0",
+    "test": "tsx --test --test-concurrency=1 tests/*.test.ts tests/*.test.mjs",
     "db:migrate": "prisma migrate deploy",
     "db:seed": "tsx prisma/seed.ts",
     "admin:create": "tsx scripts/admin-create.ts",
     "setup:local": "node scripts/setup-local.mjs",
     "db:stop": "node scripts/stop-db.mjs",
     "preview:setup": "node scripts/setup-preview.mjs",
-    "preview": "node scripts/start-preview.mjs"
+    "preview": "node scripts/start-preview.mjs",
+    "build:pages": "node scripts/build-pages.mjs",
+    "test:pages": "node --test tests/pages.test.mjs"
   },
   "dependencies": {
     "@prisma/adapter-pg": "7.10.1",
