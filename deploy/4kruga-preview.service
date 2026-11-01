@@ -1,0 +1,21 @@
+[Unit]
+Description=4kruga authenticated read-only client preview
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+User=fourkruga-preview
+Group=fourkruga-preview
+WorkingDirectory=/srv/4kruga-preview
+EnvironmentFile=/etc/4kruga-preview.env
+ExecStart=/usr/bin/node dist/src/server.js
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,158 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Category {
+  id String @id
+  name String @unique
+  sortOrder Int @default(0)
+  products Product[]
+}
+
+model Brand {
+  id String @id
+  name String @unique
+  models ScooterModel[]
+  products Product[]
+}
+
+model ScooterModel {
+  id String @id
+  name String
+  brandId String
+  brand Brand @relation(fields:[brandId],references:[id])
+  compatibility Compatibility[]
+  @@unique([brandId,name])
+}
+
+model Product {
+  id String @id
+  slug String @unique
+  sku String @unique
+  name String
+  categoryId String
+  category Category @relation(fields:[categoryId],references:[id])
+  brandId String
+  brand Brand @relation(fields:[brandId],references:[id])
+  priceCents Int
+  stock Int
+  description String
+  specs Json
+  images String[]
+  testData Boolean @default(true)
+  sourceUrl String?
+  sourceSku String?
+  sourceAvailability String?
+  sourceRetrievedAt DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  compatibility Compatibility[]
+  cartItems CartItem[]
+  @@index([categoryId,brandId])
+  @@index([priceCents])
+}
+
+model Compatibility {
+  productId String
+  modelId String
+  product Product @relation(fields:[productId],references:[id],onDelete:Cascade)
+  model ScooterModel @relation(fields:[modelId],references:[id])
+  @@id([productId,modelId])
+  @@index([modelId])
+}
+
+model ShopSession {
+  id String @id
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  cartItems CartItem[]
+  orders ShopOrder[]
+  repairs RepairRequest[]
+}
+
+model CartItem {
+  sessionId String
+  productId String
+  quantity Int
+  addedAt DateTime @default(now())
+  session ShopSession @relation(fields:[sessionId],references:[id],onDelete:Cascade)
+  product Product @relation(fields:[productId],references:[id])
+  @@id([sessionId,productId])
+}
+
+model ShopOrder {
+  id String @id
+  number String @unique
+  sessionId String
+  session ShopSession @relation(fields:[sessionId],references:[id])
+  idempotencyKey String
+  requestHash String
+  status String @default("NEW")
+  totalCents BigInt
+  customerName String
+  phone String
+  email String
+  delivery String
+  address String
+  comment String
+  paymentMethod String @default("ON_RECEIPT")
+  consentVersion String
+  consentAt DateTime
+  createdAt DateTime @default(now())
+  items OrderItem[]
+  @@unique([sessionId,idempotencyKey])
+  @@index([createdAt])
+}
+
+model OrderItem {
+  id String @id @default(cuid())
+  orderId String
+  order ShopOrder @relation(fields:[orderId],references:[id])
+  productId String
+  name String
+  sku String
+  priceCents Int
+  quantity Int
+  @@unique([orderId,productId])
+}
+
+model RepairRequest {
+  id String @id
+  number String @unique
+  sessionId String
+  session ShopSession @relation(fields:[sessionId],references:[id])
+  idempotencyKey String
+  requestHash String
+  customerName String
+  phone String
+  email String
+  brand String
+  model String
+  description String
+  status String @default("NEW")
+  consentVersion String
+  consentAt DateTime
+  createdAt DateTime @default(now())
+  @@unique([sessionId,idempotencyKey])
+  @@index([createdAt])
+}
+
+model Admin {
+  id String @id @default(cuid())
+  email String @unique
+  passwordHash String
+  createdAt DateTime @default(now())
+  sessions AdminSession[]
+}
+
+model AdminSession {
+  id String @id
+  adminId String
+  admin Admin @relation(fields:[adminId],references:[id],onDelete:Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}

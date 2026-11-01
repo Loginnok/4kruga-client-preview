@@ -1,0 +1,40 @@
+{
+  "name": "4kruga-local-shop",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "node scripts/start-local.mjs",
+    "build": "prisma generate && tsc -p tsconfig.json && node scripts/build.mjs",
+    "typecheck": "prisma generate && tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src scripts prisma tests public/app.js --max-warnings=0",
+    "test": "tsx --test --test-concurrency=1 tests/*.test.ts",
+    "db:migrate": "prisma migrate deploy",
+    "db:seed": "tsx prisma/seed.ts",
+    "admin:create": "tsx scripts/admin-create.ts",
+    "setup:local": "node scripts/setup-local.mjs",
+    "db:stop": "node scripts/stop-db.mjs",
+    "preview:setup": "node scripts/setup-preview.mjs",
+    "preview": "node scripts/start-preview.mjs"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "7.10.1",
+    "@prisma/client": "7.10.1",
+    "dotenv": "17.2.3",
+    "pg": "8.16.3",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.0",
+    "@types/pg": "8.15.6",
+    "eslint": "9.39.0",
+    "prisma": "7.10.1",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.46.0"
+  }
+}
