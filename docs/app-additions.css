@@ -22,3 +22,30 @@ select[multiple]{min-height:120px}.admin-heading span{overflow-wrap:anywhere}.fo
 
 @media(max-width:600px){.C .nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.C .nav a,.C .nav a.nav-primary,.C .nav a.repair-link{display:flex;width:100%;font-size:12px;padding:10px 7px;min-width:0;white-space:normal}.C .nav a:not(.nav-primary):not(.repair-link){display:flex}}
 @media(max-width:360px){.C .hero h1{font-size:26px;overflow-wrap:anywhere}.C .repair h2{font-size:25px;overflow-wrap:anywhere}}
+
+
+/* Dedicated client-preview service landing, Nov 2026 */
+.C .service-hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(220px,.75fr);gap:28px;align-items:center;padding:40px 42px;background:linear-gradient(125deg,#0b2341 0%,#1455a5 100%);border-radius:22px;color:#fff;overflow:hidden}
+.C .service-hero .eyebrow{color:#a7ceff}
+.C .service-hero h1{font-size:clamp(32px,4vw,49px);line-height:1.07;letter-spacing:-.04em;margin:15px 0}
+.C .service-hero p{font-size:15px;line-height:1.75;color:#e2edff;max-width:550px;margin:0}
+.C .service-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:25px}
+.C .service-actions .primary{padding:13px 20px;background:#fff;color:#1454ac;border-radius:12px}
+.C .service-messenger{font-size:12px;color:#d3e4ff;line-height:1.5}
+.C .service-hero-art{border:1px solid #ffffff4d;aspect-ratio:1.24;border-radius:26px;background:radial-gradient(circle at 50% 40%,#4294ee88,#0c306211 68%);display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:inset 0 0 60px #ffffff0a}
+.C .service-hero-art span:first-child{font-size:92px;font-weight:900;letter-spacing:-.08em;line-height:1}
+.C .service-hero-art span:nth-child(2){font-size:27px;font-weight:800;letter-spacing:.02em}
+.C .service-hero-art small{font-size:13px;letter-spacing:.3em;margin-top:12px;color:#c7dbf8}
+.C .service-section{margin-top:36px}
+.C .service-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.C .service-card{background:#f7faff;border:1px solid #dce6f5;border-radius:18px;padding:24px;min-height:205px}
+.C .service-index{display:inline-block;padding:7px 10px;background:#e5efff;border-radius:10px;color:#1559b7;font-size:12px;font-weight:700}
+.C .service-card h3{font-size:19px;margin:17px 0 9px;line-height:1.25;color:#152d4b}
+.C .service-card p{font-size:13px;line-height:1.65;color:#59708c;margin:0}
+.C .service-contact{margin-top:20px;border:1px solid #dce6f5;border-radius:20px;padding:27px 30px;display:flex;gap:28px;align-items:center;justify-content:space-between;background:#fff}
+.C .service-contact h2{font-size:25px;margin:8px 0}
+.C .service-contact p{font-size:13px;line-height:1.6;color:#5e7188;margin:0;max-width:540px}
+.C .service-phone{white-space:nowrap;display:inline-block;padding:15px 19px;background:#175de2;border-radius:12px;color:#fff;font-weight:700}
+.C .service-preview-note{margin-top:20px;color:#617287;font-size:12px;line-height:1.5}
+@media(max-width:800px){.C .service-hero{grid-template-columns:1fr;padding:30px}.C .service-hero-art{display:none}.C .service-cards{grid-template-columns:1fr}.C .service-card{min-height:0}.C .service-contact{align-items:flex-start;flex-direction:column}}
+@media(max-width:480px){.C .service-hero{padding:25px 20px;border-radius:18px}.C .service-hero h1{font-size:33px}.C .service-hero p{font-size:14px}.C .service-actions{align-items:flex-start;flex-direction:column}.C .service-section{margin-top:26px}.C .service-card{padding:20px}.C .service-contact{padding:21px}.C .service-phone{width:100%;text-align:center}}
