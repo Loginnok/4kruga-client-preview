@@ -71,3 +71,18 @@ select[multiple]{min-height:120px}.admin-heading span{overflow-wrap:anywhere}.fo
 .C .catalog-service-links a{display:block;white-space:nowrap;border-radius:10px;padding:10px 14px;background:#185add;color:#fff;font-size:12px;font-weight:700}
 @media(max-width:850px){.C .catalog-service-banner{align-items:flex-start;flex-direction:column}.C .service-details{grid-template-columns:1fr}}
 @media(max-width:600px){.C .service-detail{padding:21px}.C .service-detail h3{font-size:20px}.C .catalog-service-banner{padding:15px}.C .catalog-service-links{width:100%;display:grid;grid-template-columns:1fr 1fr}.C .catalog-service-links a{white-space:normal;text-align:center;padding:12px 8px;font-size:11px}.C .service-category-nav a{font-size:12px;padding:10px 12px}}
+
+/* MAX messenger placeholder, no unverified link */
+.C .max-contact-button{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:9px 13px;border:1px solid #6964e9;background:#f0efff;color:#4338a6;border-radius:12px;min-height:43px;cursor:pointer;font:inherit;box-shadow:0 2px 8px #262e6b0a;white-space:nowrap}
+.C .max-contact-button:hover{background:#e5e1ff;border-color:#4c45ce}
+.C .max-contact-button:focus-visible{outline:3px solid #8c80ff;outline-offset:2px}
+.C .max-contact-name{font-weight:850;font-size:14px;letter-spacing:-.04em}
+.C .max-contact-sub{font-size:10px;font-weight:700;background:#dedbfd;color:#5c55a5;border-radius:6px;padding:3px 5px}
+.C .max-header{flex-shrink:0}
+.C .max-footer{align-self:flex-start;margin:8px 0}
+.C .max-home{margin-top:11px}
+.C .service-actions .max-service{background:#fff;color:#4036b7;border-color:#fff}
+.C .service-contact-actions{display:flex;gap:10px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
+.C .service-contact-actions .service-phone{white-space:nowrap}
+@media(max-width:850px){.C .max-header{min-height:39px;padding:7px 9px}.C .max-header .max-contact-name{font-size:13px}}
+@media(max-width:600px){.C .header-actions{gap:6px;flex-wrap:wrap;justify-content:flex-end}.C .max-header{min-height:37px;gap:4px;padding:7px 8px}.C .max-header .max-contact-sub{font-size:9px}.C .service-contact-actions{width:100%;justify-content:flex-start}.C .service-contact-actions .service-phone{width:auto;flex:1}.C .service-contact-actions .max-service{flex:1}}
