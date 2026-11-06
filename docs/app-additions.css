@@ -49,3 +49,25 @@ select[multiple]{min-height:120px}.admin-heading span{overflow-wrap:anywhere}.fo
 .C .service-preview-note{margin-top:20px;color:#617287;font-size:12px;line-height:1.5}
 @media(max-width:800px){.C .service-hero{grid-template-columns:1fr;padding:30px}.C .service-hero-art{display:none}.C .service-cards{grid-template-columns:1fr}.C .service-card{min-height:0}.C .service-contact{align-items:flex-start;flex-direction:column}}
 @media(max-width:480px){.C .service-hero{padding:25px 20px;border-radius:18px}.C .service-hero h1{font-size:33px}.C .service-hero p{font-size:14px}.C .service-actions{align-items:flex-start;flex-direction:column}.C .service-section{margin-top:26px}.C .service-card{padding:20px}.C .service-contact{padding:21px}.C .service-phone{width:100%;text-align:center}}
+
+
+/* Repair navigation and dedicated real-service categories */
+.C .service-category-nav{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 8px}
+.C .service-category-nav a{background:#ecf4ff;border:1px solid #d6e6fc;border-radius:100px;padding:11px 17px;font-weight:700;font-size:13px;color:#174f9f;transition:background .15s}
+.C .service-category-nav a:hover{background:#d6e8ff}
+.C .service-action-outline{padding:12px 18px;border:1px solid #bdd5ff;border-radius:12px;color:#fff;font-size:13px;font-weight:700}
+.C .service-details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.C .service-detail{scroll-margin-top:24px;min-width:0;padding:27px;border:1px solid #dce6f5;border-radius:19px;background:#f7faff}
+.C .service-detail h3{font-size:23px;letter-spacing:-.02em;color:#18365c;margin:16px 0 10px;line-height:1.25}
+.C .service-detail p{font-size:14px;line-height:1.7;color:#536981;margin:0 0 17px}
+.C .service-detail a{display:inline-block;font-size:13px;font-weight:700;color:#1357c6}
+.C .service-address{margin-top:12px!important;color:#2c4a74!important;font-weight:650}
+.C .service-contact{scroll-margin-top:24px}
+.C .catalog-service-banner{display:flex;align-items:center;justify-content:space-between;gap:18px;border:1px solid #bcd2f7;background:#edf5ff;border-radius:16px;padding:17px 20px;margin:20px 0 24px}
+.C .catalog-service-banner>div:first-child{display:flex;flex-direction:column;gap:6px}
+.C .catalog-service-banner strong{font-size:16px;color:#153f7b}
+.C .catalog-service-banner span{font-size:13px;color:#43668e;line-height:1.4}
+.C .catalog-service-links{display:flex;gap:8px;flex-wrap:wrap}
+.C .catalog-service-links a{display:block;white-space:nowrap;border-radius:10px;padding:10px 14px;background:#185add;color:#fff;font-size:12px;font-weight:700}
+@media(max-width:850px){.C .catalog-service-banner{align-items:flex-start;flex-direction:column}.C .service-details{grid-template-columns:1fr}}
+@media(max-width:600px){.C .service-detail{padding:21px}.C .service-detail h3{font-size:20px}.C .catalog-service-banner{padding:15px}.C .catalog-service-links{width:100%;display:grid;grid-template-columns:1fr 1fr}.C .catalog-service-links a{white-space:normal;text-align:center;padding:12px 8px;font-size:11px}.C .service-category-nav a{font-size:12px;padding:10px 12px}}
