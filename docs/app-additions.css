@@ -86,3 +86,18 @@ select[multiple]{min-height:120px}.admin-heading span{overflow-wrap:anywhere}.fo
 .C .service-contact-actions .service-phone{white-space:nowrap}
 @media(max-width:850px){.C .max-header{min-height:39px;padding:7px 9px}.C .max-header .max-contact-name{font-size:13px}}
 @media(max-width:600px){.C .header-actions{gap:6px;flex-wrap:wrap;justify-content:flex-end}.C .max-header{min-height:37px;gap:4px;padding:7px 8px}.C .max-header .max-contact-sub{font-size:9px}.C .service-contact-actions{width:100%;justify-content:flex-start}.C .service-contact-actions .service-phone{width:auto;flex:1}.C .service-contact-actions .max-service{flex:1}}
+
+/* Repairs requested by customer — original storefront design preserved */
+.C .scooter-repair-panel{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(210px,.8fr);gap:24px;align-items:center;margin-top:24px;background:#f0f5fc;border:1px solid #d8e5f3;border-radius:20px;padding:29px}
+.C .scooter-repair-panel h2{color:#213b5d;font-size:28px;line-height:1.17;margin:10px 0}
+.C .scooter-repair-panel p{color:#526784;font-size:14px;line-height:1.65}
+.C .scooter-repair-brands{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 22px}
+.C .scooter-repair-brands span{border:1px solid #bed5f4;background:#e6f0ff;padding:7px 12px;border-radius:40px;color:#1853a0;font-size:12px;font-weight:700}
+.C .repair-panel-side{background:#fff;border:1px solid #d8e4f2;border-radius:16px;padding:26px;display:flex;flex-direction:column;justify-content:center;min-height:182px;gap:12px}
+.C .repair-panel-side strong{font-size:18px;color:#274365;line-height:1.3}
+.C .repair-panel-side p{color:#536b88;font-size:13px;margin:0}
+.C .repair-panel-side a{color:#185cbe;font-size:13px;font-weight:700}
+.C .stroller-repair-panel{display:block;margin-top:22px;background:#f4f7fb;border:1px solid #dce6f1}
+.C .stroller-repair-panel h2{font-size:26px;color:#274365;margin:11px 0}
+.C .stroller-repair-panel p{font-size:14px;color:#526784;max-width:620px}
+@media(max-width:700px){.C .scooter-repair-panel{grid-template-columns:1fr;padding:23px 19px}.C .repair-panel-side{min-height:0;padding:18px}.C .scooter-repair-panel h2{font-size:25px}.C .stroller-repair-panel{padding:23px 19px}}
