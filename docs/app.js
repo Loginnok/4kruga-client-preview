@@ -2,6 +2,11 @@ const app=document.getElementById('app');
 const basePath=document.documentElement.dataset.basePath||'';
 const staticPreview=document.documentElement.dataset.staticPreview==='1';
 const buildQuery=document.documentElement.dataset.buildVersion?'?v='+document.documentElement.dataset.buildVersion:'';
+/* Apply the final storefront design after every legacy stylesheet on every static route. */
+const storefrontStyle=document.createElement('link');
+storefrontStyle.rel='stylesheet';
+storefrontStyle.href=(basePath||'')+'/rebrand.css?v=20261108design';
+document.head.appendChild(storefrontStyle);
 let snapshotPromise;
 function pagePath(path=location.pathname){return (basePath&&(path===basePath||path.startsWith(basePath+'/'))?path.slice(basePath.length):path).replace(/\/+$/,'')||'/';}
 function preparePageLinks(){if(!basePath)return;for(const element of app.querySelectorAll('a[href^="/"],img[src^="/"]')){const attribute=element.tagName==='IMG'?'src':'href';const value=element.getAttribute(attribute);if(value&&!value.startsWith('//')&&value!==basePath&&!value.startsWith(basePath+'/'))element.setAttribute(attribute,basePath+value);}}
